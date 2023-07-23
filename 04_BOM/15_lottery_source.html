@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>lottery</title>
+
+  <style>
+    body {
+      font-size: 9pt;
+    }
+
+    #wrap {
+      width: 400px;
+      height: 500px;
+      position: absolute;
+      left: 50%;
+      margin-left: -200px;
+      top: 200px;
+    }
+
+    #panel {
+      border: 1px #000000 solid;
+      line-height: 400px;
+      font-size: 100px;
+      width: 400px;
+      height: 400px;
+      text-align: center;
+      vertical-align: middle;
+      margin-bottom: 30px;
+    }
+
+    #nav {
+      text-align: center;
+    }
+  </style>
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js'></script>
+
+  <!--jQuery 소스삽입  cdnjs 플러그인 사용 -->
+
+
+  <script>
+
+    $(document).ready(function () {
+
+      var $panel = $("#panel")
+      var $startBtn = $("#start_btn")
+      var $stopBtn = $("#stop_btn")
+      var $totalWrap = $("#total_wrap")
+      var totalMember = null;
+      var timer = null;
+      var isLottery = false;
+
+      $startBtn.on("click", startLottery)
+      $stopBtn.on("click", stopLottery)
+
+
+      function startLottery() {
+
+        if (isLottery == false) {
+
+          totalMember = parseInt($totalWrap.val())
+
+          timer = setInterval(creatText, 20)
+
+
+        } isLottery = true;
+
+      }
+
+      function stopLottery() {
+
+        if (isLottery == true) {
+
+          clearInterval(timer)
+
+        }
+        isLottery = false;
+
+
+      }
+
+      function creatText() {
+
+        var count = parseInt(Math.random() * totalMember) + 1
+
+        $panel.html(count)
+        $panel.css({ "font-size": Math.random() * 100 + 100 });
+
+      }
+
+
+
+
+    })
+
+
+
+
+
+
+
+
+  </script>
+
+
+</head>
+
+<body>
+
+  <div id="wrap">
+
+    <div id="panel">
+
+    </div>
+
+    <div id="nav">
+      참여인원 : <input type="text" id="total_wrap" value="10"></input>
+      <button id="start_btn">시작</button>
+      <button id="stop_btn">멈춤</button>
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>
