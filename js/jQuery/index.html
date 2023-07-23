@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        /*
+        변수를 호출하기 전 변수가 선언되어야 함
+        변수를 선언할때는 scope(var)사용
+        = 기호는 우항을 좌항으로 치환을 의미
+        숫자형 변수와 문자형 변수는 +로 이어붙일 수 있다 (최정결과는 문자로 변한다)
+        문자형 변수는 +를 제외한 사칙연산의 계산이 가능하다
+        값과 값은 반드시 사칙연산으로 연결해야 함,  탬플릿리터럴을 사용하길 권장
+        null, undefined, NaN 
+        parseInt('1') -> 1
+        parseInt(1.2345) -> 1
+        parseInt('1' + '2') -> 12
+        parseInt('5px') -> 5
+        parseInt('px5') -> NaN
+        */
+
+        /* 1.나머지구하기 */
+        var 나누어질숫자 = parseInt(prompt('나누어질 숫자를 입력')) //'21'->21 
+        var 나눌숫자 = parseInt(prompt('나눌 숫자를 입력')) //'5'->5
+        var 몫 = parseInt(나누어질숫자 / 나눌숫자)  //몫 :21 / 5 = 4.2 -> 4
+        var 나머지 = 나누어질숫자 - 나눌숫자 * 몫 //나머지 : 21 - 5*4
+        //alert('값은 '+몫+', 나머지는'+나머지) //값은 4, 나머지는 5
+        alert(`값은 "${몫}", 나머지는 "${나머지}"`)
+    </script>
+</head>
+
+<body>
+    <pre>
+1.
+var a = 1 // a = 1
+var b
+var c = a + b 
+console.log(c) 
+    </pre>
+
+    <pre>
+2.
+var a = 1 // a=1
+var b = a // b=1
+var c = b // c=1
+var d = a + b + c // d = 1+1+1
+console.log(d) //3
+    </pre>
+
+    <pre>
+3.
+var a = '1' //a ='1'
+a = a + a //a = '11'
+var b = '2'   
+b = b + b //b = '22'
+console.log('결과는' +  242   )//'결과는 242'
+    </pre>
+
+</body>
+
+
+</html>

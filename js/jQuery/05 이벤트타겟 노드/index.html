@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트타겟 노드</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script> 
+    <script src="./JS/script.js"></script>
+</head>
+<body>
+    <div class="ex1 slider">
+        <img class="img1" src="./images/img1.jpg" alt="이미지1">
+        <img class="img2" src="./images/img2.jpg" alt="이미지1">
+        <img class="img3" src="./images/img3.jpg" alt="이미지1">
+        <img class="img4" src="./images/img4.jpg" alt="이미지1">
+        <img class="img5" src="./images/img5.jpg" alt="이미지1">
+        <div class="btns">
+            <button class="btn1 active" value="1"></button>
+            <button class="btn2" value="2"></button>
+            <button class="btn3" value="3"></button>
+            <button class="btn4" value="4"></button>
+            <button class="btn5" value="5"></button>
+        </div>
+    </div>
+    <hr>
+    <div class="ex2 slider">
+        <img class="img1" src="./images/img1.jpg" alt="이미지1">
+        <img class="img2" src="./images/img2.jpg" alt="이미지1">
+        <img class="img3" src="./images/img3.jpg" alt="이미지1">
+        <img class="img4" src="./images/img4.jpg" alt="이미지1">
+        <img class="img5" src="./images/img5.jpg" alt="이미지1">
+        <div class="btns">
+            <button class="btn1 active" value="1"></button>
+            <button class="btn2" value="2"></button>
+            <button class="btn3" value="3"></button>
+            <button class="btn4" value="4"></button>
+            <button class="btn5" value="5"></button>
+        </div>  
+    </div>
+    <hr>    
+    <div class="ex3"> <!-- 부모의 요소는 하나의 요소밖에 가질 수 없다. -->
+        <p>3. 클릭한 버튼의 부모박스가 변해요<br>
+            클릭한 박스의 자식버튼이 변해요.<!-- 이벤트 캡쳐링 =  자식 요소를 선택하면 부모요소부터 선택되는 속성이다. -->
+            <!-- 버블링 : 자식요소가 먼저 실행되는 속성이다. -->
+        </p>
+        <div>
+            <div class="box"><button>1</button></div>
+            <div class="box"><button>2</button></div>
+            <div class="box"><button>3</button></div>
+        </div>
+        <br>
+        <div>
+            <div class="box"><button>1</button></div>
+            <div class="box"><button>2</button></div>
+            <div class="box"><button>3</button></div>
+        </div>
+    </div>
+    <hr>
+    <div class="ex4">
+        <p><button>버튼</button></p>
+        <p><button>버튼</button></p>
+        <p><button>버튼</button></p>
+    </div>
+    <hr>
+    <div class="ex5 ex_test"> <!-- 버튼을 클릭했을 때 toggleClass를 사용하여 스타일 변경하기 -->
+        <p><button>버튼1</button></p>
+        <p><button>버튼2</button></p>
+        <p><button>버튼3</button></p>
+        <p><button>버튼3</button></p>
+        <p><button>버튼3</button></p>
+        <p><button>버튼3</button></p>
+        <p><button>버튼3</button></p>
+        <p><button>버튼3</button></p>
+    </div>
+    <hr>
+    <div class="ex6 ex_test"> <!-- 버튼을 클릭했을 때 toggleClass를 사용하여 스타일 변경하기 -->
+        <p><button>버튼1</button></p>
+        <p><button>버튼2</button></p>
+        <p><button>버튼3</button></p>
+        <p><button>버튼3</button></p>
+        <p><button>버튼3</button></p>
+        <p><button>버튼3</button></p>
+        <p><button>버튼3</button></p>
+        <p><button>버튼3</button></p>
+    </div>
+
+
+
+</body>
+</html>
