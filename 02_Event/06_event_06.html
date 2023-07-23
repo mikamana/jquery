@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>event_05</title>
+  
+  <style>
+  
+  div#red{
+    width:300px; height:300px; position:absolute; left:200px; top:200px; background:red; 
+  }
+
+  div#yellow{
+    width:150px; height:150px; position:absolute; left:75px; top:75px; background:yellow; 
+  }  
+  
+  </style>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js'></script>
+  <!--jQuery 소스삽입 ( 1.12 버전이 좋음 ) cdnjs 플러그인 사용 () -->
+
+  <script>
+  
+   /* 이벤트 대상 찾기 
+
+    $(this) : $(this)가 포함된 함수를 실행시키기 위해서 이벤트를 발생시킨 대상 
+    
+    $(e.currentTarget) : 매개변수로 받은 이벤트를 발생 시킨대상 ( 자식요소 무시 )
+
+    $(e.target) : 매개변수로 받은 이벤트를 발생 시킨대상 ( 자식요소 포함 )
+
+  */    
+		
+	$(document).ready(function(){      
+            
+      
+
+      $("#red").on("click",onRedClick); 
+      
+      
+      function onRedClick(e){ // e.currentTarget, e.target을 사용하려면 사용된 이벤트를 매개변수로 받아야함 e (event 의 약자 )
+       
+        $(this).css('background','green') // 이벤트를 발생시킨 대상 red 가 녹색으로 바뀜 ( 자식요소 무시 )  
+        //$(e.currentTarget).css('background','green') // 이벤트를 발생시킨 대상 red 가 녹색으로 바뀜 ( 자식요소 무시 )
+        //$(e.target).css('background','green') // 이벤트를 발생시킨 대상 red, yellow 가 녹색으로 바뀜 ( 자식요소 포함 )
+
+      }    
+      
+
+    });
+
+  
+  </script>
+
+
+</head>
+<body>
+  
+
+  <div id="red">
+
+    parent
+    
+    <div id="yellow">
+
+      child
+
+
+
+    </div>
+
+
+
+  </div>
+
+
+
+
+</body>
+</html>
